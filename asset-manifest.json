@@ -1,13 +1,13 @@
 {
-  "main.js": "/StuRuby/mapstyle-studio/static/js/main.2589fdae.chunk.js",
-  "main.js.map": "/StuRuby/mapstyle-studio/static/js/main.2589fdae.chunk.js.map",
-  "runtime~main.js": "/StuRuby/mapstyle-studio/static/js/runtime~main.afa05d20.js",
-  "runtime~main.js.map": "/StuRuby/mapstyle-studio/static/js/runtime~main.afa05d20.js.map",
-  "static/css/2.6e790365.chunk.css": "/StuRuby/mapstyle-studio/static/css/2.6e790365.chunk.css",
-  "static/js/2.fbce805a.chunk.js": "/StuRuby/mapstyle-studio/static/js/2.fbce805a.chunk.js",
-  "static/js/2.fbce805a.chunk.js.map": "/StuRuby/mapstyle-studio/static/js/2.fbce805a.chunk.js.map",
-  "index.html": "/StuRuby/mapstyle-studio/index.html",
-  "precache-manifest.501e7c614583deda92ee7a58334b4a0a.js": "/StuRuby/mapstyle-studio/precache-manifest.501e7c614583deda92ee7a58334b4a0a.js",
-  "service-worker.js": "/StuRuby/mapstyle-studio/service-worker.js",
-  "static/css/2.6e790365.chunk.css.map": "/StuRuby/mapstyle-studio/static/css/2.6e790365.chunk.css.map"
+  "main.js": "/mapstyle-studio/static/js/main.2589fdae.chunk.js",
+  "main.js.map": "/mapstyle-studio/static/js/main.2589fdae.chunk.js.map",
+  "runtime~main.js": "/mapstyle-studio/static/js/runtime~main.43025070.js",
+  "runtime~main.js.map": "/mapstyle-studio/static/js/runtime~main.43025070.js.map",
+  "static/css/2.6e790365.chunk.css": "/mapstyle-studio/static/css/2.6e790365.chunk.css",
+  "static/js/2.831358d8.chunk.js": "/mapstyle-studio/static/js/2.831358d8.chunk.js",
+  "static/js/2.831358d8.chunk.js.map": "/mapstyle-studio/static/js/2.831358d8.chunk.js.map",
+  "index.html": "/mapstyle-studio/index.html",
+  "precache-manifest.501f3d789bd804415ec6b79a0ba86a13.js": "/mapstyle-studio/precache-manifest.501f3d789bd804415ec6b79a0ba86a13.js",
+  "service-worker.js": "/mapstyle-studio/service-worker.js",
+  "static/css/2.6e790365.chunk.css.map": "/mapstyle-studio/static/css/2.6e790365.chunk.css.map"
 }

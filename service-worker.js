@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/StuRuby/mapstyle-studio/precache-manifest.501e7c614583deda92ee7a58334b4a0a.js"
+  "/mapstyle-studio/precache-manifest.501f3d789bd804415ec6b79a0ba86a13.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/StuRuby/mapstyle-studio/index.html", {
+workbox.routing.registerNavigationRoute("/mapstyle-studio/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
