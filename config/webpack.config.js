@@ -62,7 +62,6 @@ module.exports = function(webpackEnv) {
     const publicUrl = isEnvProduction
         ? publicPath.slice(0, -1)
         : isEnvDevelopment && '';
-    console.log('___________' + publicUrl + '_____________');
     // Get environment variables to inject into our app.
     const env = getClientEnvironment(publicUrl);
 
