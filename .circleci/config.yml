@@ -50,4 +50,4 @@ jobs:
             # run build!
             - deploy:
                   name: Run deploy
-                  command: ./deploy-ghpages.sh build
+                  command: ../deploy-ghpages.sh build
