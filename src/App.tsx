@@ -1,10 +1,17 @@
-import DatePicker from 'antd/lib/date-picker';
 import * as React from 'react';
 
-const App: React.StatelessComponent<{}> = () => (
+interface IProps {
+    children: React.ReactNodeArray;
+}
+
+const App: React.StatelessComponent<IProps> = (props: IProps) => (
     <div>
-        <DatePicker />
-        111
+        <div
+            className="fixed top right bottom left"
+            style={{ background: 'gray' }}
+        >
+            {props.children}
+        </div>
     </div>
 );
 
