@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>html template</title>
+        <link
+            href="https://api.mapbox.com/mapbox-assembly/v0.23.1/assembly.min.css"
+            rel="stylesheet"
+        />
+        <script
+            async
+            defer
+            src="https://api.mapbox.com/mapbox-assembly/v0.23.1/assembly.js"
+        ></script>
+    </head>
+    <body>
+        <div class="fixed top right bottom left" id="ghost">
+            <div>
+                <div
+                    id="container"
+                    data-test="style-editor"
+                    class="bg-white select-none absolute top right bottom left"
+                >
+                    <div
+                        id="map"
+                        class="absolute top left right bottom fill-canvas mapboxgl-map"
+                    ></div>
+                    <div>
+                        <!-- layers panel 具体配置样式-->
+                        <div
+                            id="card-style-layers"
+                            class="absolute top left bottom w360 flex-parent flex-parent--column shadow-darken10 bg-gray-faint border-l border--gray-light"
+                            style="margin-left: 210px;"
+                        >
+                            <!-- layer标题，选择数据，配置样式 -->
+                            <div
+                                class="flex-child flex-child--no-shrink flex-parent flex-parent--space-between-main flex-parent--end-cross bg-gray-faint mx12 border-b border--gray-light"
+                            >
+                                <div
+                                    class="flex-child flex-child--grow py6 my3 wmin0"
+                                >
+                                    <div
+                                        class="flex-parent w-full"
+                                        data-test="layer-name"
+                                    >
+                                        <div
+                                            class="flex-child flex-child--no-shrink"
+                                        >
+                                            <svg
+                                                role="presentation"
+                                                focusable="false"
+                                                class="events-none icon mr6 inline-block align-t"
+                                                style="width: 18px; height: 24px;"
+                                            >
+                                                <use
+                                                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                    xlink:href="#icon-transform-uppercase"
+                                                ></use>
+                                            </svg>
+                                        </div>
+                                        <div
+                                            class="flex-child flex-child--grow"
+                                        >
+                                            <div class="w-full cursor-pointer">
+                                                <div
+                                                    class="txt-fancy flex-parent flex-parent--space-between-main"
+                                                >
+                                                    <div
+                                                        class="flex-parent flex-parent--center-cross flex-child flex-child--grow"
+                                                    >
+                                                        <div
+                                                            data-test="layer-name-text"
+                                                            class="txt-truncate"
+                                                        >
+                                                            <!-- react-text: 10558 -->country-label<!-- /react-text -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="flex-child flex-child--no-shrink ml12"
+                                >
+                                    <div
+                                        class="mb-neg1 flex-parent flex-parent--center-cross"
+                                    >
+                                        <div class="flex-child">
+                                            <button
+                                                type="button"
+                                                class="border-b border--transparent border--gray-dark-on-active flex-child txt-truncate link link--gray h36 txt-xs is-active"
+                                            >
+                                                <div style="display: flex;">
+                                                    <div
+                                                        data-test="style-tab-button-trigger"
+                                                        class="flex-parent w-full"
+                                                        aria-describedby="tooltip-100"
+                                                    >
+                                                        <span class="mb6"
+                                                            >Style</span
+                                                        >
+                                                    </div>
+                                                    <div
+                                                        class="hide-visually"
+                                                        id="tooltip-100"
+                                                        role="tooltip"
+                                                        data-test="style-tab-button-tooltip"
+                                                    >
+                                                        <div
+                                                            class="unselectable"
+                                                        >
+                                                            <!-- react-text: 10102 -->Toggle
+                                                            style panel<!-- /react-text -->
+                                                            <div
+                                                                class="inline-block"
+                                                            >
+                                                                <span
+                                                                    ><span
+                                                                        class="txt-kbd txt-kbd--dark txt-s ml6"
+                                                                        >[</span
+                                                                    ></span
+                                                                >
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <div class="flex-child">
+                                            <button
+                                                type="button"
+                                                class="border-b border--transparent border--gray-dark-on-active flex-child txt-truncate link link--gray h36 txt-xs ml12"
+                                            >
+                                                <div style="display: flex;">
+                                                    <div
+                                                        data-test="data-tab-button-trigger"
+                                                        class="flex-parent w-full"
+                                                        aria-describedby="tooltip-101"
+                                                    >
+                                                        <span class="mb6"
+                                                            >Select data</span
+                                                        >
+                                                    </div>
+                                                    <div
+                                                        class="hide-visually"
+                                                        id="tooltip-101"
+                                                        role="tooltip"
+                                                        data-test="data-tab-button-tooltip"
+                                                    >
+                                                        <div
+                                                            class="unselectable"
+                                                        >
+                                                            <!-- react-text: 9720 -->Toggle
+                                                            data panel<!-- /react-text -->
+                                                            <div
+                                                                class="inline-block"
+                                                            >
+                                                                <span
+                                                                    ><span
+                                                                        class="txt-kbd txt-kbd--dark txt-s ml6"
+                                                                        >]</span
+                                                                    ></span
+                                                                >
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 具体配置区域 -->
+                            <div
+                                class=" flex-child flex-child--grow flex-parent flex-parent--column"
+                            >
+                            <!-- text/position / placement / icon 选择 -->
+                            <div class="flex-child flex-child--no-shrink mx12 border-b border--gray-light"><div class="mb-neg1 flex-parent flex-parent--center-cross"><div class="flex-child"><button type="button" class="border-b border--transparent border--gray-dark-on-active flex-child txt-truncate link link--gray h36 txt-xs">Text</button></div><div class="flex-child"><button type="button" class="border-b border--transparent border--gray-dark-on-active flex-child txt-truncate link link--gray h36 txt-xs ml12">Icon</button></div><div class="flex-child"><button type="button" class="border-b border--transparent border--gray-dark-on-active flex-child txt-truncate link link--gray h36 txt-xs ml12">Position</button></div><div class="flex-child"><button type="button" class="border-b border--transparent border--gray-dark-on-active flex-child txt-truncate link link--gray h36 txt-xs is-active ml12">Placement</button></div></div></div>
+                            <!-- 选择属性，并配置 -->
+                            <div class="flex-child flex-child--grow flex-parent">
+                                <!-- 选择属性 -->
+                                <div class="flex-child flex-child--grow border-r border--gray-light scroll-auto scroll-styled my12"><div class="px6 pb6"><div class=""><button type="button" class="block w-full pl6 pr6 py6 h-full border-b border--transparent transition color-gray-dark w-full bg-gray-light-on-active bg-darken5-on-hover color-blue-on-hover txt-xs px3 cursor-pointer py3 round block is-active"><div title="Placement" class="relative txt-bold mb3">Placement</div><div class="color-text h15"><div class="flex-parent flex-parent--space-between-main flex-parent--center-cross mt3"><div class="flex-child flex-child--grow mr3"><div title="point" class="hmax18 txt-mono txt-xs txt-normal overflow-x-on-hover events-all txt-truncate-unless-hover relative txt-nowrap scroll-styled block"><svg role="presentation" focusable="false" class="events-none icon" style="width: 18px; height: 18px;"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-circle"></use></svg></div></div></div></div></button><div style="display: block;"><div aria-describedby="tooltip-1306"><button type="button" disabled="" class="block w-full pl6 pr6 py6 h-full border-b border--transparent opacity50 txt-xs cursor-notallowed"><div title="Spacing" class="relative txt-bold mb3">Spacing</div><div class="color-text h15"><div class="flex-parent flex-parent--space-between-main flex-parent--center-cross mt3"><div class="flex-child flex-child--grow mr3"><div title="250 px" class="hmax18 txt-mono txt-xs txt-normal overflow-x-on-hover events-all txt-truncate-unless-hover relative txt-nowrap scroll-styled block"><div class="txt-truncate"><!-- react-text: 15162 -->250<!-- /react-text --><span class="ml3">px</span></div></div></div><div class="flex-child flex-child--no-shrink" data-test="number-button-minimal"><svg width="42" height="18" class="txt-mono block"><g transform="translate(4, 5)"><path stroke="#5b7897" stroke-width="1.4" stroke-linecap="round" fill="none" d="M0,11 L0,11 L0.7727272727272727,11 L1.5454545454545454,11 L2.3181818181818183,11 L3.090909090909091,11 L3.8636363636363633,11 L4.636363636363637,11 L5.409090909090909,11 L6.181818181818182,11 L6.954545454545454,11 L7.727272727272727,11 L8.5,11 L9.272727272727273,11 L10.045454545454545,11 L10.818181818181818,11 L11.59090909090909,11 L12.363636363636363,11 L13.136363636363637,11 L13.909090909090908,11 L14.681818181818182,11 L15.454545454545453,11 L16.227272727272727,11 L17,11 L17.772727272727273,11 L18.545454545454547,11 L19.318181818181817,11 L20.09090909090909,11 L20.863636363636363,11 L21.636363636363637,11 L22.40909090909091,11 L23.18181818181818,11 L23.954545454545453,11 L24.727272727272727,11 L25.5,11 L26.272727272727273,11 L27.045454545454543,11 L27.818181818181817,11 L28.59090909090909,11 L29.363636363636363,11 L30.136363636363637,11 L30.909090909090907,11 L31.68181818181818,11 L32.45454545454545,11 L33.22727272727273,11 L34,11 L34.77272727272727,11"></path><g transform="translate(0, 11)"><circle class="transition" r="2" fill="#5b7897" stroke-width="2" stroke="transparent"></circle></g><g transform="translate(34, 11)"><circle class="transition" r="2" fill="#5b7897" stroke-width="2" stroke="transparent"></circle></g><g transform="translate(16.99285792178442, 6)"><path d="M0.272,0l4.421,0c0.15,0,0.272,0.11,0.272,0.245v2.992c0,0.063-0.027,0.124-0.076,0.17l-2.21,2.08 c-0.107,0.101-0.286,0.101-0.393,0l-2.21-2.08C0.027,3.361,0,3.301,0,3.237l0-2.992C0,0.11,0.122,0,0.272,0z" transform="translate(-2, 0)" fill="#23374d" stroke="white" stroke-width="1"></path></g></g></svg></div></div></div></button></div><div class="hide-visually" role="tooltip" id="tooltip-1306"><div><div class="txt-bold mb3">Currently unavailable. To enable:</div><ul><div>Symbol placement must be set to "line".</div></ul></div></div></div><div style="display: block;"><div aria-describedby="tooltip-1307"><button type="button" disabled="" class="block w-full pl6 pr6 py6 h-full border-b border--transparent opacity50 txt-xs cursor-notallowed"><div title="Text max angle" class="relative txt-bold mb3">Text max angle</div><div class="color-text h15"><div class="flex-parent flex-parent--space-between-main flex-parent--center-cross mt3"><div class="flex-child flex-child--grow mr3"><div title="45 deg" class="hmax18 txt-mono txt-xs txt-normal overflow-x-on-hover events-all txt-truncate-unless-hover relative txt-nowrap scroll-styled block"><div class="txt-truncate"><!-- react-text: 15188 -->45<!-- /react-text --><span class="ml3">deg</span></div></div></div></div></div></button></div><div class="hide-visually" role="tooltip" id="tooltip-1307"><div><div class="txt-bold mb3">Currently unavailable. To enable:</div><ul><div>Symbol placement must be set to "List [ "line", "line-center" ]".</div></ul></div></div></div><button type="button" class="block w-full pl6 pr6 py6 h-full border-b border--transparent transition color-gray-dark w-full bg-gray-light-on-active bg-darken5-on-hover color-blue-on-hover txt-xs px3 cursor-pointer py3 round block"><div title="Avoid edges" class="relative txt-bold mb3">Avoid edges</div><div class="color-text h15"><div class="flex-parent flex-parent--space-between-main flex-parent--center-cross mt3"><div class="flex-child flex-child--grow mr3"><div class="hmax18 txt-mono txt-xs txt-normal overflow-x-on-hover events-all txt-truncate-unless-hover relative txt-nowrap scroll-styled block">False</div></div></div></div></button></div><div class="border-t border--gray-light mt6 pt6"><button type="button" class="block w-full pl6 pr6 py6 h-full border-b border--transparent transition color-gray-dark w-full bg-gray-light-on-active bg-darken5-on-hover color-blue-on-hover txt-xs px3 cursor-pointer py3 round block"><div title="Text orientation" class="relative txt-bold mb3">Text orientation</div><div class="color-text h15"><div class="flex-parent flex-parent--space-between-main flex-parent--center-cross mt3"><div class="flex-child flex-child--grow mr3"><div title="map" class="hmax18 txt-mono txt-xs txt-normal overflow-x-on-hover events-all txt-truncate-unless-hover relative txt-nowrap scroll-styled block"><svg role="presentation" focusable="false" class="events-none icon" style="width: 18px; height: 18px;"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-globe"></use></svg></div></div></div></div></button><div style="display: block;"><div aria-describedby="tooltip-1293"><button type="button" disabled="" class="block w-full pl6 pr6 py6 h-full border-b border--transparent opacity50 txt-xs cursor-notallowed"><div title="Keep text upright" class="relative txt-bold mb3">Keep text upright</div><div class="color-text h15"><div class="flex-parent flex-parent--space-between-main flex-parent--center-cross mt3"><div class="flex-child flex-child--grow mr3"><div class="hmax18 txt-mono txt-xs txt-normal overflow-x-on-hover events-all txt-truncate-unless-hover relative txt-nowrap scroll-styled block">True</div></div></div></div></button></div><div class="hide-visually" role="tooltip" id="tooltip-1293"><div><div class="txt-bold mb3">Currently unavailable. To enable:</div><ul><div>Symbol placement must be set to "List [ "line", "line-center" ]".</div></ul></div></div></div><div style="display: block;"><div aria-describedby="tooltip-1294"><button type="button" disabled="" class="block w-full pl6 pr6 py6 h-full border-b border--transparent opacity50 txt-xs cursor-notallowed"><div title="Icon orientation" class="relative txt-bold mb3">Icon orientation</div><div class="color-text h15"><div class="flex-parent flex-parent--space-between-main flex-parent--center-cross mt3"><div class="flex-child flex-child--grow mr3"><div title="auto" class="hmax18 txt-mono txt-xs txt-normal overflow-x-on-hover events-all txt-truncate-unless-hover relative txt-nowrap scroll-styled block"><svg role="presentation" focusable="false" class="events-none icon" style="width: 18px; height: 18px;"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-refresh"></use></svg></div></div></div></div></button></div><div class="hide-visually" role="tooltip" id="tooltip-1294"><div><div class="txt-bold mb3">Currently unavailable. To enable:</div><ul><div>Icon image must have a value.</div></ul></div></div></div><div style="display: block;"><div aria-describedby="tooltip-1295"><button type="button" disabled="" class="block w-full pl6 pr6 py6 h-full border-b border--transparent opacity50 txt-xs cursor-notallowed"><div title="Keep icon upright" class="relative txt-bold mb3">Keep icon upright</div><div class="color-text h15"><div class="flex-parent flex-parent--space-between-main flex-parent--center-cross mt3"><div class="flex-child flex-child--grow mr3"><div class="hmax18 txt-mono txt-xs txt-normal overflow-x-on-hover events-all txt-truncate-unless-hover relative txt-nowrap scroll-styled block">False</div></div></div></div></button></div><div class="hide-visually" role="tooltip" id="tooltip-1295"><div><div class="txt-bold mb3">Currently unavailable. To enable:</div><ul><div>Icon image must have a value.</div><div>Icon orientation must be set to "map".</div><div>Symbol placement must be set to "List [ "line", "line-center" ]".</div></ul></div></div></div></div><div class="border-t border--gray-light mt6 pt6"><button type="button" class="block w-full pl6 pr6 py6 h-full border-b border--transparent transition color-gray-dark w-full bg-gray-light-on-active bg-darken5-on-hover color-blue-on-hover txt-xs px3 cursor-pointer py3 round block"><div title="Text padding" class="relative txt-bold mb3">Text padding</div><div class="color-text h15"><div class="flex-parent flex-parent--space-between-main flex-parent--center-cross mt3"><div class="flex-child flex-child--grow mr3"><div title="2 px" class="hmax18 txt-mono txt-xs txt-normal overflow-x-on-hover events-all txt-truncate-unless-hover relative txt-nowrap scroll-styled block"><div class="txt-truncate"><!-- react-text: 15217 -->2<!-- /react-text --><span class="ml3">px</span></div></div></div></div></div></button><button type="button" class="block w-full pl6 pr6 py6 h-full border-b border--transparent transition color-gray-dark w-full bg-gray-light-on-active bg-darken5-on-hover color-blue-on-hover txt-xs px3 cursor-pointer py3 round block"><div title="Allow text overlap" class="relative txt-bold mb3">Allow text overlap</div><div class="color-text h15"><div class="flex-parent flex-parent--space-between-main flex-parent--center-cross mt3"><div class="flex-child flex-child--grow mr3"><div class="hmax18 txt-mono txt-xs txt-normal overflow-x-on-hover events-all txt-truncate-unless-hover relative txt-nowrap scroll-styled block">False</div></div><div class="flex-child flex-child--no-shrink" data-test="number-button-minimal"><svg width="42" height="18" class="txt-mono block"><g transform="translate(4, 5)"><rect width="36" x="-1" y="0" height="1" rx="1" ry="1" fill="#5b7897"></rect><g transform="translate(0, 0.5)"><circle class="transition" r="2" cy="0" fill="#5b7897" stroke-width="2" stroke="transparent"></circle></g><g transform="translate(34, 0.5)"><circle class="transition" r="2" cy="0" fill="#5b7897" stroke-width="2" stroke="transparent"></circle></g><g transform="translate(16.99285792178442, -4.5)"><path d="M0.272,0l4.421,0c0.15,0,0.272,0.11,0.272,0.245v2.992c0,0.063-0.027,0.124-0.076,0.17l-2.21,2.08 c-0.107,0.101-0.286,0.101-0.393,0l-2.21-2.08C0.027,3.361,0,3.301,0,3.237l0-2.992C0,0.11,0.122,0,0.272,0z" transform="translate(-2, 0)" fill="#23374d" stroke="white" stroke-width="1"></path></g></g></svg></div></div></div></button><button type="button" class="block w-full pl6 pr6 py6 h-full border-b border--transparent transition color-gray-dark w-full bg-gray-light-on-active bg-darken5-on-hover color-blue-on-hover txt-xs px3 cursor-pointer py3 round block"><div title="Ignore text placement" class="relative txt-bold mb3">Ignore text placement</div><div class="color-text h15"><div class="flex-parent flex-parent--space-between-main flex-parent--center-cross mt3"><div class="flex-child flex-child--grow mr3"><div class="hmax18 txt-mono txt-xs txt-normal overflow-x-on-hover events-all txt-truncate-unless-hover relative txt-nowrap scroll-styled block">False</div></div></div></div></button><div style="display: block;"><div aria-describedby="tooltip-1308"><button type="button" disabled="" class="block w-full pl6 pr6 py6 h-full border-b border--transparent opacity50 txt-xs cursor-notallowed"><div title="Optional text" class="relative txt-bold mb3">Optional text</div><div class="color-text h15"><div class="flex-parent flex-parent--space-between-main flex-parent--center-cross mt3"><div class="flex-child flex-child--grow mr3"><div class="hmax18 txt-mono txt-xs txt-normal overflow-x-on-hover events-all txt-truncate-unless-hover relative txt-nowrap scroll-styled block">False</div></div></div></div></button></div><div class="hide-visually" role="tooltip" id="tooltip-1308"><div><div class="txt-bold mb3">Currently unavailable. To enable:</div><ul><div>Icon image must have a value.</div></ul></div></div></div><div style="display: block;"><div aria-describedby="tooltip-1309"><button type="button" disabled="" class="block w-full pl6 pr6 py6 h-full border-b border--transparent opacity50 txt-xs cursor-notallowed"><div title="Icon padding" class="relative txt-bold mb3">Icon padding</div><div class="color-text h15"><div class="flex-parent flex-parent--space-between-main flex-parent--center-cross mt3"><div class="flex-child flex-child--grow mr3"><div title="2 px" class="hmax18 txt-mono txt-xs txt-normal overflow-x-on-hover events-all txt-truncate-unless-hover relative txt-nowrap scroll-styled block"><div class="txt-truncate"><!-- react-text: 15263 -->2<!-- /react-text --><span class="ml3">px</span></div></div></div></div></div></button></div><div class="hide-visually" role="tooltip" id="tooltip-1309"><div><div class="txt-bold mb3">Currently unavailable. To enable:</div><ul><div>Icon image must have a value.</div></ul></div></div></div><div style="display: block;"><div aria-describedby="tooltip-1310"><button type="button" disabled="" class="block w-full pl6 pr6 py6 h-full border-b border--transparent opacity50 txt-xs cursor-notallowed"><div title="Allow icon overlap" class="relative txt-bold mb3">Allow icon overlap</div><div class="color-text h15"><div class="flex-parent flex-parent--space-between-main flex-parent--center-cross mt3"><div class="flex-child flex-child--grow mr3"><div class="hmax18 txt-mono txt-xs txt-normal overflow-x-on-hover events-all txt-truncate-unless-hover relative txt-nowrap scroll-styled block">False</div></div></div></div></button></div><div class="hide-visually" role="tooltip" id="tooltip-1310"><div><div class="txt-bold mb3">Currently unavailable. To enable:</div><ul><div>Icon image must have a value.</div></ul></div></div></div><div style="display: block;"><div aria-describedby="tooltip-1311"><button type="button" disabled="" class="block w-full pl6 pr6 py6 h-full border-b border--transparent opacity50 txt-xs cursor-notallowed"><div title="Ignore icon placement" class="relative txt-bold mb3">Ignore icon placement</div><div class="color-text h15"><div class="flex-parent flex-parent--space-between-main flex-parent--center-cross mt3"><div class="flex-child flex-child--grow mr3"><div class="hmax18 txt-mono txt-xs txt-normal overflow-x-on-hover events-all txt-truncate-unless-hover relative txt-nowrap scroll-styled block">False</div></div></div></div></button></div><div class="hide-visually" role="tooltip" id="tooltip-1311"><div><div class="txt-bold mb3">Currently unavailable. To enable:</div><ul><div>Icon image must have a value.</div></ul></div></div></div><div style="display: block;"><div aria-describedby="tooltip-1312"><button type="button" disabled="" class="block w-full pl6 pr6 py6 h-full border-b border--transparent opacity50 txt-xs cursor-notallowed"><div title="Optional icon" class="relative txt-bold mb3">Optional icon</div><div class="color-text h15"><div class="flex-parent flex-parent--space-between-main flex-parent--center-cross mt3"><div class="flex-child flex-child--grow mr3"><div class="hmax18 txt-mono txt-xs txt-normal overflow-x-on-hover events-all txt-truncate-unless-hover relative txt-nowrap scroll-styled block">False</div></div></div></div></button></div><div class="hide-visually" role="tooltip" id="tooltip-1312"><div><div class="txt-bold mb3">Currently unavailable. To enable:</div><ul><div>Icon image must have a value.</div></ul></div></div></div></div></div></div>
+                                <!-- 配置 -->
+                                <div class="flex-child flex-child--no-shrink w240"><div class="h-full flex-parent flex-parent--column"><div class="flex-child flex-child--grow flex-child--no-shrink relative"><div class="absolute bottom left top right flex-parent flex-parent--column flex-parent--space-between-main"><div class="flex-child flex-child--grow scroll-styled scroll-auto"><div class="px12 py12"><div><div class="mb6" data-test="full-label"><h6 class="txt-xs unselectable"><span class="txt-bold mr6">Symbol placement</span><!-- react-text: 15316 --><!-- /react-text --></h6></div><div class=""><div class="py3 px3 relative"><div class="border absolute events-none top left right bottom round-full bg-white border--gray-light"></div><div class="relative "><fieldset><div id="1-toggle" class="toggle-group round-full grid" role="radiogroup" aria-required="true" data-test="1-toggle-input"><label class="toggle-container col "><input type="radio" value="point" name="1-toggle"><div class="txt-s py0 round-full toggle--s toggle--gray px0 toggle"><div style="display: block;"><div aria-describedby="tooltip-1313"><svg role="presentation" focusable="false" class="events-none icon mx-auto" style="width: 18px; height: 18px;"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-circle"></use></svg></div><div class="hide-visually" role="tooltip" id="tooltip-1313"><div><div class="txt-bold mb3">Point</div><!-- react-text: 15333 -->The label is placed at the point where the geometry is located.<!-- /react-text --></div></div></div></div></label><label class="toggle-container col "><input type="radio" value="line" name="1-toggle"><div class="txt-s py0 round-full toggle--s toggle--gray px0 toggle"><div style="display: block;"><div aria-describedby="tooltip-1314"><svg role="presentation" focusable="false" class="events-none icon mx-auto" style="width: 18px; height: 18px;"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-line"></use></svg></div><div class="hide-visually" role="tooltip" id="tooltip-1314"><div><div class="txt-bold mb3">Line</div><!-- react-text: 15344 -->The label is placed along the line of the geometry. Can only be used on `LineString` and `Polygon` geometries.<!-- /react-text --></div></div></div></div></label><label class="toggle-container col "><input type="radio" value="line-center" name="1-toggle"><div class="txt-s py0 round-full toggle--s toggle--gray px0 toggle"><div style="display: block;"><div aria-describedby="tooltip-1315"><svg role="presentation" focusable="false" class="events-none icon mx-auto" style="width: 18px; height: 18px;"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-line-center"></use></svg></div><div class="hide-visually" role="tooltip" id="tooltip-1315"><div><div class="txt-bold mb3">Line center</div><!-- react-text: 15355 -->The label is placed at the center of the line of the geometry. Can only be used on `LineString` and `Polygon` geometries. Note that a single feature in a vector tile may contain multiple line geometries.<!-- /react-text --></div></div></div></div></label></div></fieldset><div role="alert"></div></div></div></div><div><div class="border-t border--gray-light mt12 pt12"><div style="display: flex;"><button type="button" data-popover-ignore-clicks="true" class="flex-parent flex-parent--center-cross txt-xs py6 txt-bold link link--gray" data-test="property-editor-options-zoomCurveExpression" aria-describedby="tooltip-1316"><div class="h18 w18 flex-child mr6"><div style="position: relative; padding-bottom: 100%;"><svg aria-hidden="true" focusable="false" class="w18 h18 icon" viewBox="0 0 18 18" style="position: absolute; overflow: hidden; top: 0px; left: 0px; width: 100%;"><path d="M5.7 2C4.2 2 3 3.2 3 4.7v8.6C3 14.8 4.2 16 5.7 16c1.4 0 2.5-1.1 2.7-2.4-2.2-.7-3.7-2.8-3.7-5.1 0-2.2 1.4-4.2 3.4-5C7.6 2.6 6.7 2 5.7 2z" opacity=".5"></path><path d="M10 4.7c-2.1 0-3.8 1.7-3.8 3.8s1.7 3.8 3.8 3.8c.7 0 1.4-.2 2-.6l2.3 2.3c.8.8 1.9-.4 1.1-1.1l-2.3-2.3c.4-.6.6-1.3.6-2 .1-2.2-1.6-3.9-3.7-3.9zm0 1.1c1.5 0 2.7 1.2 2.7 2.7s-1.2 2.7-2.7 2.7S7.3 10 7.3 8.5 8.5 5.8 10 5.8zm0 1c-.3 0-.5.2-.5.5v.5h-.6c-.3 0-.5.2-.5.5 0 .5.2.7.5.7h.5v.5c0 .3.2.5.5.5s.5-.2.5-.5V9h.5c.3 0 .5-.2.5-.5s-.2-.5-.5-.5h-.5v-.6c.1-.3-.1-.6-.4-.6z"></path></svg></div></div><span class="unselectable">Style across zoom range</span></button><div class="hide-visually" role="tooltip" id="tooltip-1316"><span class="unselectable">Style across zoom range</span></div></div><div style="display: flex;"><div class="flex-parent flex-parent--center-cross txt-xs py6 txt-bold link link--gray opacity50 cursor-notallowed unselectable events-none" data-test="property-editor-options-dataCurveExpression" aria-describedby="tooltip-1317"><div class="h18 w18 flex-child mr6"><div style="position: relative; padding-bottom: 100%;"><svg aria-hidden="true" focusable="false" class="w18 h18 icon" viewBox="0 0 18 18" style="position: absolute; overflow: hidden; top: 0px; left: 0px; width: 100%;"><path d="M5.5 2C4.1 2 3 3.1 3 4.5v9C3 14.9 4.1 16 5.5 16c1.2 0 2.1-.8 2.4-1.8-.1 0-.3-.1-.4-.1-.4-.2-.8-.3-1.2-.7-.4-.3-.8-.9-.8-1.6v-.3c0-.3 0-.6.2-.9.1-.1.2-.2.3-.4-.2-.3-.5-.5-.5-.9V9c0-.3 0-.6.2-.9.1-.1.2-.3.3-.4-.2-.3-.5-.6-.5-1v-.4c0-.7.4-1.3.8-1.6.4-.3.8-.5 1.2-.7.1-.1.3-.1.4-.1C7.6 2.8 6.7 2 5.5 2z" opacity=".5"></path><path d="M10.5 5C8.6 5 7 5.6 7 6.3v.3C7 7.4 8.6 8 10.5 8S14 7.4 14 6.7v-.4c0-.7-1.5-1.3-3.5-1.3zm3.2 3.8c-.1 0-.1 0-.2.1-.1 0-.1.1-.1.1-.6.3-1.6.5-2.8.5s-2.3-.2-2.9-.6c0 0-.1 0-.1-.1h-.4c-.1 0-.2.1-.2.3v.3c0 .7 1.5 1.2 3.5 1.2s3.5-.5 3.5-1.2v-.3c0-.2-.1-.3-.3-.3zm0 2.4c-.1 0-.1.2-.2.2s-.1.1-.1.1c-.6.3-1.6.5-2.8.5s-2.2-.2-2.8-.5c0 0-.1 0-.1-.1-.1-.1-.3-.1-.4-.1-.1 0-.1.1-.1.3v.4c0 .7 1.5 1.2 3.5 1.2S14 12.7 14 12v-.3c0-.3-.1-.5-.3-.5z"></path></svg></div></div><span class="unselectable">Style across data range</span></div><div class="hide-visually" id="tooltip-1317" role="tooltip"><div class="txt-xs"><svg role="presentation" focusable="false" class="events-none icon inline-block align-t" style="width: 18px; height: 15px;"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-alert"></use></svg><!-- react-text: 15462 -->This option is not compatible with all Mapbox SDK versions selected. Open<!-- /react-text --><!-- react-text: 15463 --> <!-- /react-text --><button type="button" data-test="open-compatibility" class="link">compatibility</button><!-- react-text: 15465 --> <!-- /react-text --><!-- react-text: 15466 -->to check your version support.<!-- /react-text --></div></div></div><div style="display: flex;"><div class="flex-parent flex-parent--center-cross txt-xs py6 txt-bold link link--gray opacity50 cursor-notallowed unselectable events-none" data-test="property-editor-options-caseExpression" aria-describedby="tooltip-1318"><div class="h18 w18 flex-child mr6"><div style="position: relative; padding-bottom: 100%;"><svg aria-hidden="true" focusable="false" class="w18 h18 icon" viewBox="0 0 18 18" style="position: absolute; overflow: hidden; top: 0px; left: 0px; width: 100%;"><path d="M13 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 5c-.4 0-.8.1-1.1.3.2.3.4.7.5 1 .1.3.1.7.1.7s0 .4-.1.7c-.1.3-.3.6-.5 1 .3.2.7.3 1.1.3 1.1 0 2-.9 2-2s-.9-2-2-2zm0 5c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" opacity=".5"></path><path d="M8 12c.3 0 .6-.1.7-.3l1.9-1.8c.4-.5.4-.9.4-.9s0-.4-.4-.9L8.8 6.3C8.6 6.1 8.3 6 8 6c-.6 0-1 .4-1 1v1H6V5c0-.6-.4-1-1-1s-1 .4-1 1v3c0 1.2.8 2 2 2h1v1c0 .6.4 1 1 1z"></path></svg></div></div><span class="unselectable">Style with data conditions</span></div><div class="hide-visually" role="tooltip" id="tooltip-1318"><div class="txt-xs"><svg role="presentation" focusable="false" class="events-none icon inline-block align-t" style="width: 18px; height: 15px;"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-alert"></use></svg><!-- react-text: 15398 -->This option is not compatible with all Mapbox SDK versions selected. Open<!-- /react-text --><!-- react-text: 15399 --> <!-- /react-text --><button type="button" data-test="open-compatibility" class="link">compatibility</button><!-- react-text: 15401 --> <!-- /react-text --><!-- react-text: 15402 -->to check your version support.<!-- /react-text --></div></div></div><div style="display: flex;"><button type="button" data-popover-ignore-clicks="true" class="flex-parent flex-parent--center-cross txt-xs py6 txt-bold link link--gray" data-test="property-editor-options-formula" aria-describedby="tooltip-1319"><div class="h18 w18 flex-child mr6"><div style="position: relative; padding-bottom: 100%;"><svg aria-hidden="true" focusable="false" class="w18 h18 icon" viewBox="0 0 18 18" style="position: absolute; overflow: hidden; top: 0px; left: 0px; width: 100%;"><path d="M7 5c-.5 0-.9.4-1 .9l-.7 5-.6-.6c-.4-.4-1-.4-1.4 0s-.4 1 0 1.4l2 2c.4.4 1 .4 1.4 0 .2-.1.3-.3.3-.6L7.9 7H13c.6 0 1-.4 1-1s-.4-1-1-1H7z"></path><circle cx="11" cy="11" r="2" opacity=".5"></circle></svg></div></div><span class="unselectable">Use a formula</span></button><div class="hide-visually" role="tooltip" id="tooltip-1319"><span class="unselectable">Use a formula</span></div></div></div><div class="mt12 pt12 border-t border--gray-light"><div style="display: block;"><button disabled="" data-test="clear-value-button" class="flex-parent flex-parent--center-cross txt-xs py3 txt-bold link link--gray mb6" aria-describedby="tooltip-1320"><svg role="presentation" focusable="false" class="events-none icon h18 w18 flex-child mr3" style="width: 18px; height: 18px;"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-undo"></use></svg><!-- react-text: 15418 -->Reset value to default<!-- /react-text --></button><div class="hide-visually" role="tooltip" id="tooltip-1320">Value is already default</div></div><button class="flex-parent flex-parent--center-cross txt-xs py3 txt-bold link link--gray" data-popover-ignore-clicks="true" data-test="existing-value-button"><span class="h18 w18 flex-child mr3"><div style="position: relative; padding-bottom: 100%;"><svg aria-hidden="true" focusable="false" class="h18 w18 icon" viewBox="0 0 18 18" style="position: absolute; overflow: hidden; top: 0px; left: 0px; width: 100%;"><path d="M11 3c-.6 0-1 .4-1 1s.4 1 1 1h1c1 0 1 1 1 1v1h-1c-.6 0-1 .4-1 1 0 .3.1.6.3.8l1.8 1.8c.5.4.9.4.9.4s.4 0 .9-.4l1.8-1.9c.2-.2.3-.4.3-.7 0-.6-.4-1-1-1h-1V6c0-1.5-1.5-3-3-3h-1zM5.5 4.5C4.7 4.5 4 5.2 4 6H1v10h9v-3.4V6H7c0-.8-.7-1.5-1.5-1.5zM3 8h5v4l-2 2H3V8zm1 1v1h3V9H4zm0 2v1h2v-1H4z"></path><circle cx="14" cy="14" r="2" opacity=".5"></circle></svg></div></span><!-- react-text: 15426 -->Apply existing value<!-- /react-text --></button></div></div></div></div></div><div class="flex-child flex-child--no-shrink border-t border--gray-light mx12 py12"><div class="flex-parent"><div class="flex-child"><button data-test="details-toggle" class="link link--gray flex-parent flex-parent--center-cross py3"><svg role="presentation" focusable="false" class="events-none icon" style="width: 18px; height: 18px;"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-caret-right"></use></svg><span class="txt-xs">Details</span></button></div><div data-test="editor-toggle-group" class="flex-child absolute bottom right mr12 mb12"><div class="relative "><fieldset><div id="property_editor_panel-toggle" class="toggle-group round-full align-t" role="radiogroup" aria-required="true" data-test="property_editor_panel-toggle-input"><label class="toggle-container "><input type="radio" value="visual interface" name="property_editor_panel-toggle"><div class="txt-s py0 round-full toggle--s toggle--gray py3 toggle"><div style="display: block;"><div aria-describedby="tooltip-1321"><svg role="presentation" focusable="false" class="events-none icon" style="width: 18px; height: 18px;"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-cursor"></use></svg></div><div class="hide-visually" role="tooltip" id="tooltip-1321"><span class="unselectable">Edit value</span></div></div></div></label><label class="toggle-container "><input type="radio" value="json" name="property_editor_panel-toggle"><div class="txt-s py0 round-full toggle--s toggle--gray py3 toggle"><div style="display: block;"><div aria-describedby="tooltip-1322"><svg role="presentation" focusable="false" class="events-none icon" style="width: 18px; height: 18px;"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-code"></use></svg></div><div class="hide-visually" role="tooltip" id="tooltip-1322"><span class="unselectable">Edit JSON</span></div></div></div></label></div></fieldset><div role="alert"></div></div></div></div></div></div></div></div></div>
+                            </div>    
+                        </div>
+                        </div>
+                        <!-- layers panel 控制图层 -->
+                        <div
+                            id="card-style-layers-pane"
+                            class=" absolute top left bottom bg-white flex-parent flex-parent--column "
+                            style="width:210px"
+                        ></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+<script>
+    // const getRandomColor = () => {
+    //     let letters = '0123456789ABCDEF';
+    //     let color = '#';
+    //     for (let i = 0; i < 6; i++) {
+    //         color += letters[Math.floor(Math.random() * 16)];
+    //     }
+    //     return color;
+    // };
+    // Array.from(document.all).forEach(
+    //     el => (el.style.outline = `1px solid ${getRandomColor()}`)
+    // );
+</script>

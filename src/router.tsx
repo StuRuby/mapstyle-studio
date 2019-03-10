@@ -5,7 +5,9 @@ import App from './App';
 const AppRouter: React.StatelessComponent<{}> = () => (
     <Routes>
         <Switch>
-            <Route exact path="/" component={App} />
+            <Route exact path="/" component={App}>
+            
+            </Route>
         </Switch>
     </Routes>
 );
