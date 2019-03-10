@@ -1,7 +1,8 @@
 import * as React from 'react';
+import LayerHeader from './LayerHeader';
 
 interface IProps {
-    test: string;
+    test?: string;
 }
 
 export default class LayerList extends React.Component<IProps> {
@@ -12,7 +13,7 @@ export default class LayerList extends React.Component<IProps> {
                 className=" absolute top left bottom bg-white flex-parent flex-parent--column "
                 style={{ width: '210px' }}
             >
-            
+                <LayerHeader />
             </div>
         );
     }

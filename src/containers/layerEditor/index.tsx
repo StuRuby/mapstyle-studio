@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 interface IProps {
-    test: string;
+    test?: string;
 }
 
 export default class LayerEditor extends React.Component<IProps> {
