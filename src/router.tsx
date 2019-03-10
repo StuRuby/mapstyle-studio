@@ -4,13 +4,12 @@ import App from './App';
 
 const AppRouter: React.StatelessComponent<{}> = () => (
     <Routes>
-        <Switch>
-            <Route exact path="/" component={App}>
-            
-            </Route>
-        </Switch>
+        <div className="fixed top right bottom left">
+            <Switch>
+                <Route exact path="/" component={App} />
+            </Switch>
+        </div>
     </Routes>
 );
-
 
 export default AppRouter;

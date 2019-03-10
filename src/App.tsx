@@ -1,17 +1,12 @@
 import * as React from 'react';
-
+import Editor from './views/Editor';
 interface IProps {
     children: React.ReactNodeArray;
 }
 
 const App: React.StatelessComponent<IProps> = (props: IProps) => (
     <div>
-        <div
-            className="fixed top right bottom left"
-            style={{ background: 'gray' }}
-        >
-            {props.children}
-        </div>
+        <Editor />
     </div>
 );
 
