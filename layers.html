@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>html template</title>
+        <link
+            href="https://api.mapbox.com/mapbox-assembly/v0.23.1/assembly.min.css"
+            rel="stylesheet"
+        />
+        <script
+            async
+            defer
+            src="https://api.mapbox.com/mapbox-assembly/v0.23.1/assembly.js"
+        ></script>
+    </head>
+    <body>
+        <div class="fixed top right bottom left" id="ghost">
+            <div>
+                <div
+                    id="container"
+                    data-test="style-editor"
+                    class="bg-white select-none absolute top right bottom left"
+                >
+                    <div
+                        id="map"
+                        class="absolute top left right bottom fill-canvas mapboxgl-map"
+                    ></div>
+                    <div>
+                        <!-- layers panel 配置具体样式 -->
+                        <div
+                            id="card-style-layers"
+                            class="absolute top left bottom w360 flex-parent flex-parent--column shadow-darken10 bg-gray-faint border-l border--gray-light"
+                            style="margin-left: 210px;"
+                        >
+                            <div
+                                class="flex-child flex-child--no-shrink flex-parent flex-parent--space-between-main flex-parent--end-cross bg-gray-faint mx12 border-b border--gray-light"
+                            ></div>
+                            <div
+                                class=" flex-child flex-child--grow flex-parent flex-parent--column"
+                            ></div>
+                        </div>
+                        <!-- layers panel 配置 layer -->
+                        <div
+                            id="card-style-layers-pane"
+                            class=" absolute top left bottom bg-white flex-parent flex-parent--column "
+                            style="width:210px"
+                        >
+                            <!-- layers 功能区与总体过滤 -->
+                            <div
+                                class="flex-child flex-child--no-shrink my3 pt6 pb6 mx12 border-b border--gray-light"
+                            >
+                                <!-- 显示配图名称+返回按钮 -->
+                                <div class="pb3">
+                                    <div class="flex-parent">
+                                        <div
+                                            class="flex-child flex-child--no-shrink"
+                                        >
+                                            <div style="display: inline-block;">
+                                                <a
+                                                    class="ml-neg6 block link"
+                                                    href="/styles"
+                                                    aria-describedby="tooltip-21"
+                                                    ><svg
+                                                        role="presentation"
+                                                        focusable="false"
+                                                        class="events-none icon color-gray mr-neg3 inline-block align-t"
+                                                        style="width: 18px; height: 24px;"
+                                                    >
+                                                        <use
+                                                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                            xlink:href="#icon-chevron-left"
+                                                        ></use></svg
+                                                    ><svg
+                                                        role="presentation"
+                                                        focusable="false"
+                                                        class="events-none icon mr6 inline-block align-t"
+                                                        style="width: 18px; height: 24px;"
+                                                    >
+                                                        <use
+                                                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                            xlink:href="#icon-mapbox"
+                                                        ></use></svg
+                                                ></a>
+                                                <div
+                                                    class="hide-visually"
+                                                    role="tooltip"
+                                                    id="tooltip-21"
+                                                >
+                                                    <span class="unselectable"
+                                                        >Go back</span
+                                                    >
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="flex-child flex-child--grow"
+                                        >
+                                            <div class="w-full cursor-pointer">
+                                                <div
+                                                    class="txt-fancy flex-parent flex-parent--space-between-main"
+                                                >
+                                                    <div
+                                                        class="flex-parent flex-parent--center-cross flex-child flex-child--grow"
+                                                    >
+                                                        <div
+                                                            data-test=""
+                                                            class="txt-truncate"
+                                                        >
+                                                            <!-- react-text: 767 -->Basic
+                                                            Template<!-- /react-text -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 第二排功能按钮 -->
+                                <div
+                                    class="mt6 mb6 pt6 border-t border--gray-light"
+                                >
+                                    <div
+                                        class="flex-parent flex-parent--center-cross"
+                                    >
+                                        <div
+                                            class="txt-xs flex-child flex-child--grow mr12"
+                                        >
+                                            <div style="display: block;">
+                                                <div
+                                                    data-test="new-layer-trigger"
+                                                    class="flex-parent w-full"
+                                                    aria-describedby="tooltip-22"
+                                                >
+                                                    <button
+                                                        type="button"
+                                                        class="btn btn--gray btn--s round px6 w-full"
+                                                    >
+                                                        <span
+                                                            class="flex-parent flex-parent--center-cross"
+                                                            ><span
+                                                                class="flex-child"
+                                                                ><svg
+                                                                    role="presentation"
+                                                                    focusable="false"
+                                                                    class="events-none icon h18 w18 mr3 inline-block align-t"
+                                                                    style="width: 18px; height: 18px;"
+                                                                >
+                                                                    <use
+                                                                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                                        xlink:href="#icon-plus"
+                                                                    ></use></svg></span
+                                                            ><span
+                                                                class="flex-child"
+                                                                >Add layer</span
+                                                            ></span
+                                                        >
+                                                    </button>
+                                                </div>
+                                                <div
+                                                    class="hide-visually"
+                                                    role="tooltip"
+                                                    data-test="new-layer-tooltip"
+                                                    id="tooltip-22"
+                                                >
+                                                    <div class="unselectable">
+                                                        <!-- react-text: 781 -->Add
+                                                        new layer<!-- /react-text -->
+                                                        <div
+                                                            class="inline-block"
+                                                        >
+                                                            <span
+                                                                ><span
+                                                                    class="txt-kbd txt-kbd--dark txt-s ml6"
+                                                                    >n</span
+                                                                ></span
+                                                            >
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="flex-child flex-child--no-shrink mr-neg6"
+                                        >
+                                            <div class="flex-parent">
+                                                <div style="display: flex;">
+                                                    <div
+                                                        data-test="duplicate-layer-trigger"
+                                                        class="flex-parent w-full"
+                                                        aria-describedby="tooltip-23"
+                                                    >
+                                                        <button
+                                                            type="button"
+                                                            class="btn bg-transparent link link--gray txt-xs py3 px3 px3"
+                                                        >
+                                                            <svg
+                                                                role="presentation"
+                                                                focusable="false"
+                                                                class="events-none icon"
+                                                                style="width: 18px; height: 18px;"
+                                                            >
+                                                                <use
+                                                                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                                    xlink:href="#icon-duplicate"
+                                                                ></use>
+                                                            </svg>
+                                                        </button>
+                                                    </div>
+                                                    <div
+                                                        class="hide-visually"
+                                                        role="tooltip"
+                                                        data-test="duplicate-layer-tooltip"
+                                                        id="tooltip-23"
+                                                    >
+                                                        <div
+                                                            class="unselectable"
+                                                        >
+                                                            <!-- react-text: 792 -->Duplicate
+                                                            1 layer<!-- /react-text -->
+                                                            <div
+                                                                class="inline-block"
+                                                            >
+                                                                <span
+                                                                    ><span
+                                                                        class="txt-kbd txt-kbd--dark txt-s ml6"
+                                                                        >d</span
+                                                                    ></span
+                                                                >
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div style="display: flex;">
+                                                    <div
+                                                        class="flex-parent w-full"
+                                                        aria-describedby="tooltip-24"
+                                                    >
+                                                        <button
+                                                            type="button"
+                                                            class="btn bg-transparent link link--gray txt-xs py3 px3 px3"
+                                                        >
+                                                            <svg
+                                                                role="presentation"
+                                                                focusable="false"
+                                                                class="events-none icon"
+                                                                style="width: 18px; height: 18px;"
+                                                            >
+                                                                <use
+                                                                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                                    xlink:href="#icon-folder"
+                                                                ></use>
+                                                            </svg>
+                                                        </button>
+                                                    </div>
+                                                    <div
+                                                        class="hide-visually"
+                                                        role="tooltip"
+                                                        id="tooltip-24"
+                                                    >
+                                                        <div
+                                                            class="unselectable"
+                                                        >
+                                                            <!-- react-text: 801 -->Group
+                                                            1 layer<!-- /react-text -->
+                                                            <div
+                                                                class="inline-block"
+                                                            >
+                                                                <span
+                                                                    ><span
+                                                                        class="txt-kbd txt-kbd--dark txt-s ml6"
+                                                                        >g</span
+                                                                    ></span
+                                                                >
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div style="display: flex;">
+                                                    <div
+                                                        class="flex-parent w-full"
+                                                        aria-describedby="tooltip-25"
+                                                    >
+                                                        <button
+                                                            type="button"
+                                                            class="btn bg-transparent link link--gray txt-xs py3 px3 px3"
+                                                        >
+                                                            <svg
+                                                                role="presentation"
+                                                                focusable="false"
+                                                                class="events-none icon"
+                                                                style="width: 18px; height: 18px;"
+                                                            >
+                                                                <use
+                                                                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                                    xlink:href="#icon-noeye"
+                                                                ></use>
+                                                            </svg>
+                                                        </button>
+                                                    </div>
+                                                    <div
+                                                        class="hide-visually"
+                                                        role="tooltip"
+                                                        id="tooltip-25"
+                                                    >
+                                                        <div
+                                                            class="unselectable"
+                                                        >
+                                                            <!-- react-text: 810 -->Hide
+                                                            1 layer<!-- /react-text -->
+                                                            <div
+                                                                class="inline-block"
+                                                            >
+                                                                <span
+                                                                    ><span
+                                                                        class="txt-kbd txt-kbd--dark txt-s ml6"
+                                                                        >v</span
+                                                                    ></span
+                                                                >
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div style="display: flex;">
+                                                    <div
+                                                        data-test="delete-layer-trigger"
+                                                        class="flex-parent w-full"
+                                                        aria-describedby="tooltip-26"
+                                                    >
+                                                        <button
+                                                            type="button"
+                                                            class="btn bg-transparent link link--gray txt-xs py3 px3 px3"
+                                                        >
+                                                            <svg
+                                                                role="presentation"
+                                                                focusable="false"
+                                                                class="events-none icon"
+                                                                style="width: 18px; height: 18px;"
+                                                            >
+                                                                <use
+                                                                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                                    xlink:href="#icon-trash"
+                                                                ></use>
+                                                            </svg>
+                                                        </button>
+                                                    </div>
+                                                    <div
+                                                        class="hide-visually"
+                                                        role="tooltip"
+                                                        data-test="delete-layer-tooltip"
+                                                        id="tooltip-26"
+                                                    >
+                                                        <div
+                                                            class="unselectable"
+                                                        >
+                                                            <!-- react-text: 819 -->Delete
+                                                            1 layer<!-- /react-text -->
+                                                            <div
+                                                                class="inline-block"
+                                                            >
+                                                                <span
+                                                                    ><span
+                                                                        class="txt-kbd txt-kbd--dark txt-s ml6"
+                                                                        >⌘</span
+                                                                    ></span
+                                                                ><span
+                                                                    ><span
+                                                                        class="ml6"
+                                                                        >+</span
+                                                                    ><span
+                                                                        class="txt-kbd txt-kbd--dark txt-s ml6"
+                                                                        >Del</span
+                                                                    ></span
+                                                                >
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 第三排过滤+显示图层数量 -->
+                                <div>
+                                    <div
+                                        class="txt-xs flex-parent flex-parent--center-cross flex-parent--space-between-main"
+                                    >
+                                        <div class="flex-child unselectable">
+                                            24 layers
+                                        </div>
+                                        <div class="flex-child py3">
+                                            <div>
+                                                <div style="display: block;">
+                                                    <div
+                                                        class="flex-parent w-full"
+                                                        aria-describedby="tooltip-27"
+                                                    >
+                                                        <button
+                                                            type="button"
+                                                            class="link link--gray txt-xs flex-parent flex-parent--center-cross"
+                                                            data-test="layer-filter-button"
+                                                            data-popover-ignore-clicks="true"
+                                                        >
+                                                            <svg
+                                                                role="presentation"
+                                                                focusable="false"
+                                                                class="events-none icon mr3 h18"
+                                                                style="width: 18px; height: 18px;"
+                                                            >
+                                                                <use
+                                                                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                                    xlink:href="#icon-filter"
+                                                                ></use></svg
+                                                            ><!-- react-text: 831 -->Filter
+                                                            layers<!-- /react-text -->
+                                                        </button>
+                                                    </div>
+                                                    <div
+                                                        class="hide-visually"
+                                                        role="tooltip"
+                                                        id="tooltip-27"
+                                                    >
+                                                        <div
+                                                            class="unselectable"
+                                                        >
+                                                            <!-- react-text: 834 -->Filter
+                                                            layers<!-- /react-text -->
+                                                            <div
+                                                                class="inline-block"
+                                                            >
+                                                                <span
+                                                                    ><span
+                                                                        class="txt-kbd txt-kbd--dark txt-s ml6"
+                                                                        >⌘</span
+                                                                    ></span
+                                                                ><span
+                                                                    ><span
+                                                                        class="ml6"
+                                                                        >+</span
+                                                                    ><span
+                                                                        class="txt-kbd txt-kbd--dark txt-s ml6"
+                                                                        >e</span
+                                                                    ></span
+                                                                >
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- layers 具体每个layer区域 -->
+                            <div
+                                class="flex-child flex-child--grow scroll-auto scroll-styled"
+                            >
+                                <div id="layers">
+                                    <!-- layer单独显示 -->
+                                    <div class="w-full txt-truncate txt-xs">
+                                        <div>
+                                            <div draggable="true">
+                                                <div
+                                                    tabindex="0"
+                                                    role="button"
+                                                    class="flex-parent flex-parent--center-cross flex-parent--space-between-main px12 h24 txt-normal border-t txt-truncate relative transition color-gray-dark w-full bg-gray-light-on-active bg-darken5-on-hover color-blue-on-hover txt-xs px3 cursor-pointer py3 block border--white"
+                                                >
+                                                    <div
+                                                        class="flex-child flex-child--grow"
+                                                        title="country-label"
+                                                        data-test="layer_item-country"
+                                                    >
+                                                        <div
+                                                            class="flex-parent flex-parent--center-cross"
+                                                        >
+                                                            <div
+                                                                class="relative flex-child flex-child--no-shrink mr3 w12 h12"
+                                                            >
+                                                                <div
+                                                                    class="h12 w12"
+                                                                >
+                                                                    <div
+                                                                        class="fill-canvas h12 w12 round scroll-hidden events-none"
+                                                                    >
+                                                                        <div
+                                                                            data-test="color_value_preview-swatch"
+                                                                            class="round border h12 w12 border--darken50"
+                                                                            style="background-color: rgb(0, 0, 0);"
+                                                                        ></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <svg
+                                                                role="presentation"
+                                                                focusable="false"
+                                                                class="events-none icon flex-child flex-child--no-shrink mr3"
+                                                                style="width: 18px; height: 18px;"
+                                                            >
+                                                                <use
+                                                                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                                    xlink:href="#icon-transform-uppercase"
+                                                                ></use>
+                                                            </svg>
+                                                            <div
+                                                                class="flex-child flex-child--grow txt-truncate"
+                                                            >
+                                                                country-label
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="cursor-grab">
+                                                        <svg
+                                                            role="presentation"
+                                                            focusable="false"
+                                                            class="events-none icon icon--s"
+                                                            style="width: 18px; height: 18px;"
+                                                        >
+                                                            <use
+                                                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                                xlink:href="#icon-menu"
+                                                            ></use>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- layer group散开显示 -->
+                                    <div class="w-full txt-truncate txt-xs">
+                                        <div
+                                            class="flex-parent flex-parent--center-cross px6 h24 border-t transition color-gray-dark w-full bg-gray-light-on-active bg-darken5-on-hover color-blue-on-hover txt-xs px3 cursor-pointer py3 block is-active border--white"
+                                            draggable="true"
+                                        >
+                                            <div
+                                                tabindex="0"
+                                                role="button"
+                                                title="Collapse"
+                                                class="px3"
+                                            >
+                                                <svg
+                                                    role="presentation"
+                                                    focusable="false"
+                                                    class="events-none icon inline-block align-t"
+                                                    style="width: 18px; height: 15px;"
+                                                >
+                                                    <use
+                                                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                        xlink:href="#icon-caret-down"
+                                                    ></use></svg
+                                                ><svg
+                                                    role="presentation"
+                                                    focusable="false"
+                                                    class="events-none icon inline-block align-t"
+                                                    style="width: 18px; height: 15px;"
+                                                >
+                                                    <use
+                                                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                        xlink:href="#icon-folder"
+                                                    ></use>
+                                                </svg>
+                                            </div>
+                                            <div
+                                                title="Group"
+                                                class="flex-child--grow"
+                                            >
+                                                <div class="w-full ">
+                                                    <div
+                                                        class=" flex-parent flex-parent--space-between-main"
+                                                    >
+                                                        <div
+                                                            class="flex-parent flex-parent--center-cross flex-child flex-child--grow"
+                                                        >
+                                                            <div
+                                                                data-test=""
+                                                                class="txt-truncate"
+                                                            >
+                                                                <!-- react-text: 353 -->Group<!-- /react-text --><span
+                                                                    class="txt-normal txt-em ml6"
+                                                                    >4
+                                                                    layers</span
+                                                                >
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div draggable="true">
+                                                <div
+                                                    tabindex="0"
+                                                    role="button"
+                                                    class="flex-parent flex-parent--center-cross flex-parent--space-between-main px12 h24 txt-normal border-t txt-truncate relative transition color-gray-dark w-full bg-gray-light-on-active bg-darken5-on-hover color-blue-on-hover txt-xs px3 cursor-pointer py3 block is-active pl30 border--white"
+                                                >
+                                                    <div
+                                                        class="flex-child flex-child--grow"
+                                                        title="state-label"
+                                                        data-test="layer_item-state"
+                                                    >
+                                                        <div
+                                                            class="flex-parent flex-parent--center-cross"
+                                                        >
+                                                            <div
+                                                                class="relative flex-child flex-child--no-shrink mr3 w12 h12"
+                                                            >
+                                                                <div
+                                                                    class="h12 w12"
+                                                                >
+                                                                    <div
+                                                                        class="fill-canvas h12 w12 round scroll-hidden events-none"
+                                                                    >
+                                                                        <div
+                                                                            data-test="color_value_preview-swatch"
+                                                                            class="round border h12 w12 border--darken50"
+                                                                            style="background-color: rgb(253, 234, 201);"
+                                                                        ></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <svg
+                                                                role="presentation"
+                                                                focusable="false"
+                                                                class="events-none icon flex-child flex-child--no-shrink mr3"
+                                                                style="width: 18px; height: 18px;"
+                                                            >
+                                                                <use
+                                                                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                                    xlink:href="#icon-transform-uppercase"
+                                                                ></use>
+                                                            </svg>
+                                                            <div
+                                                                class="flex-child flex-child--grow txt-truncate"
+                                                            >
+                                                                state-label
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div draggable="true">
+                                                <div
+                                                    tabindex="0"
+                                                    role="button"
+                                                    class="flex-parent flex-parent--center-cross flex-parent--space-between-main px12 h24 txt-normal border-t txt-truncate relative transition color-gray-dark w-full bg-gray-light-on-active bg-darken5-on-hover color-blue-on-hover txt-xs px3 cursor-pointer py3 block is-active pl30 border--white"
+                                                >
+                                                    <div
+                                                        class="flex-child flex-child--grow"
+                                                        title="place-town-village-hamlet-label"
+                                                        data-test="layer_item-place"
+                                                    >
+                                                        <div
+                                                            class="flex-parent flex-parent--center-cross"
+                                                        >
+                                                            <div
+                                                                class="relative flex-child flex-child--no-shrink mr3 w12 h12"
+                                                            >
+                                                                <div
+                                                                    class="h12 w12"
+                                                                >
+                                                                    <div
+                                                                        class="fill-canvas h12 w12 round scroll-hidden events-none"
+                                                                    >
+                                                                        <div
+                                                                            data-test="color_value_preview-swatch"
+                                                                            class="round border h12 w12 border--darken50"
+                                                                            style="background-color: rgb(0, 0, 0);"
+                                                                        ></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <svg
+                                                                role="presentation"
+                                                                focusable="false"
+                                                                class="events-none icon flex-child flex-child--no-shrink mr3"
+                                                                style="width: 18px; height: 18px;"
+                                                            >
+                                                                <use
+                                                                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                                    xlink:href="#icon-transform-uppercase"
+                                                                ></use>
+                                                            </svg>
+                                                            <div
+                                                                class="flex-child flex-child--grow txt-truncate"
+                                                            >
+                                                                place-town-village-hamlet-label
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div draggable="true">
+                                                <div
+                                                    tabindex="0"
+                                                    role="button"
+                                                    class="flex-parent flex-parent--center-cross flex-parent--space-between-main px12 h24 txt-normal border-t txt-truncate relative transition color-gray-dark w-full bg-gray-light-on-active bg-darken5-on-hover color-blue-on-hover txt-xs px3 cursor-pointer py3 block is-active pl30 border--white"
+                                                >
+                                                    <div
+                                                        class="flex-child flex-child--grow"
+                                                        title="admin-state-province"
+                                                        data-test="layer_item-admin"
+                                                    >
+                                                        <div
+                                                            class="flex-parent flex-parent--center-cross"
+                                                        >
+                                                            <div
+                                                                class="relative flex-child flex-child--no-shrink mr3 w12 h12"
+                                                            >
+                                                                <div
+                                                                    class="h12 w12"
+                                                                >
+                                                                    <div
+                                                                        class="fill-canvas h12 w12 round scroll-hidden events-none"
+                                                                    >
+                                                                        <div
+                                                                            data-test="color_value_preview-swatch"
+                                                                            class="round border h12 w12 border--darken50"
+                                                                            style="background-color: rgb(166, 166, 166);"
+                                                                        ></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <svg
+                                                                role="presentation"
+                                                                focusable="false"
+                                                                class="events-none icon flex-child flex-child--no-shrink mr3"
+                                                                style="width: 18px; height: 18px;"
+                                                            >
+                                                                <use
+                                                                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                                    xlink:href="#icon-line"
+                                                                ></use>
+                                                            </svg>
+                                                            <div
+                                                                class="flex-child flex-child--grow txt-truncate"
+                                                            >
+                                                                admin-state-province
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div draggable="true">
+                                                <div
+                                                    tabindex="0"
+                                                    role="button"
+                                                    class="flex-parent flex-parent--center-cross flex-parent--space-between-main px12 h24 txt-normal border-t txt-truncate relative transition color-gray-dark w-full bg-gray-light-on-active bg-darken5-on-hover color-blue-on-hover txt-xs px3 cursor-pointer py3 block is-active pl30 border--white"
+                                                >
+                                                    <div
+                                                        class="flex-child flex-child--grow"
+                                                        title="place-neighborhood-suburb-label"
+                                                        data-test="layer_item-place"
+                                                    >
+                                                        <div
+                                                            class="flex-parent flex-parent--center-cross"
+                                                        >
+                                                            <div
+                                                                class="relative flex-child flex-child--no-shrink mr3 w12 h12"
+                                                            >
+                                                                <div
+                                                                    class="h12 w12"
+                                                                >
+                                                                    <div
+                                                                        class="fill-canvas h12 w12 round scroll-hidden events-none"
+                                                                    >
+                                                                        <div
+                                                                            data-test="color_value_preview-swatch"
+                                                                            class="round border h12 w12 border--darken50"
+                                                                            style="background-color: rgb(87, 62, 20);"
+                                                                        ></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <svg
+                                                                role="presentation"
+                                                                focusable="false"
+                                                                class="events-none icon flex-child flex-child--no-shrink mr3"
+                                                                style="width: 18px; height: 18px;"
+                                                            >
+                                                                <use
+                                                                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                                    xlink:href="#icon-transform-uppercase"
+                                                                ></use>
+                                                            </svg>
+                                                            <div
+                                                                class="flex-child flex-child--grow txt-truncate"
+                                                            >
+                                                                place-neighborhood-suburb-label
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- layer group 合并显示 -->
+                                    <div class="w-full txt-truncate txt-xs">
+                                        <div
+                                            class="flex-parent flex-parent--center-cross px6 h24 border-t transition color-gray-dark w-full bg-gray-light-on-active bg-darken5-on-hover color-blue-on-hover txt-xs px3 cursor-pointer py3 block is-active border--white"
+                                            draggable="true"
+                                        >
+                                            <div
+                                                tabindex="0"
+                                                role="button"
+                                                title="Expand"
+                                                class="px3"
+                                            >
+                                                <svg
+                                                    role="presentation"
+                                                    focusable="false"
+                                                    class="events-none icon inline-block align-t"
+                                                    style="width: 18px; height: 15px;"
+                                                >
+                                                    <use
+                                                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                        xlink:href="#icon-caret-right"
+                                                    ></use></svg
+                                                ><svg
+                                                    role="presentation"
+                                                    focusable="false"
+                                                    class="events-none icon inline-block align-t"
+                                                    style="width: 18px; height: 15px;"
+                                                >
+                                                    <use
+                                                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                        xlink:href="#icon-folder"
+                                                    ></use>
+                                                </svg>
+                                            </div>
+                                            <div
+                                                title="Group"
+                                                class="flex-child--grow"
+                                            >
+                                                <div class="w-full ">
+                                                    <div
+                                                        class=" flex-parent flex-parent--space-between-main"
+                                                    >
+                                                        <div
+                                                            class="flex-parent flex-parent--center-cross flex-child flex-child--grow"
+                                                        >
+                                                            <div
+                                                                data-test=""
+                                                                class="txt-truncate"
+                                                            >
+                                                                <!-- react-text: 353 -->Group<!-- /react-text --><span
+                                                                    class="txt-normal txt-em ml6"
+                                                                    >4
+                                                                    layers</span
+                                                                >
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+<script>
+    // const getRandomColor = () => {
+    //     let letters = '0123456789ABCDEF';
+    //     let color = '#';
+    //     for (let i = 0; i < 6; i++) {
+    //         color += letters[Math.floor(Math.random() * 16)];
+    //     }
+    //     return color;
+    // };
+    // Array.from(document.all).forEach(
+    //     el => (el.style.outline = `1px solid ${getRandomColor()}`)
+    // );
+</script>
