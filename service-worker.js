@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/mapstyle-studio/precache-manifest.8c6b26ee25a1ac924bbf8193482f711b.js"
+  "/mapstyle-studio/precache-manifest.92eb02c9c82083547f01878336823d6b.js"
 );
 
 workbox.clientsClaim();

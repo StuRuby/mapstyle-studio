@@ -1,13 +1,10 @@
 {
-  "main.js": "/mapstyle-studio/static/js/main.823f435e.chunk.js",
-  "main.js.map": "/mapstyle-studio/static/js/main.823f435e.chunk.js.map",
+  "main.js": "/mapstyle-studio/static/js/main.6d64f951.chunk.js",
   "runtime~main.js": "/mapstyle-studio/static/js/runtime~main.43025070.js",
-  "runtime~main.js.map": "/mapstyle-studio/static/js/runtime~main.43025070.js.map",
-  "static/css/2.6e790365.chunk.css": "/mapstyle-studio/static/css/2.6e790365.chunk.css",
-  "static/js/2.edfb6dc2.chunk.js": "/mapstyle-studio/static/js/2.edfb6dc2.chunk.js",
-  "static/js/2.edfb6dc2.chunk.js.map": "/mapstyle-studio/static/js/2.edfb6dc2.chunk.js.map",
+  "static/css/2.63ad5e6a.chunk.css": "/mapstyle-studio/static/css/2.63ad5e6a.chunk.css",
+  "static/js/2.646ac8a1.chunk.js": "/mapstyle-studio/static/js/2.646ac8a1.chunk.js",
   "index.html": "/mapstyle-studio/index.html",
-  "precache-manifest.8c6b26ee25a1ac924bbf8193482f711b.js": "/mapstyle-studio/precache-manifest.8c6b26ee25a1ac924bbf8193482f711b.js",
+  "precache-manifest.92eb02c9c82083547f01878336823d6b.js": "/mapstyle-studio/precache-manifest.92eb02c9c82083547f01878336823d6b.js",
   "service-worker.js": "/mapstyle-studio/service-worker.js",
-  "static/css/2.6e790365.chunk.css.map": "/mapstyle-studio/static/css/2.6e790365.chunk.css.map"
+  "static/css/2.63ad5e6a.chunk.css.map": "/mapstyle-studio/static/css/2.63ad5e6a.chunk.css.map"
 }
