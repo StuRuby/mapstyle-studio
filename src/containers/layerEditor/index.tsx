@@ -1,5 +1,6 @@
 import * as React from 'react';
 import StyleLayerName from '../../components/layers/StyleLayerName';
+import Tablist from '../../components/shared/Tablist';
 
 interface IProps {
     test?: string;
@@ -20,6 +21,9 @@ export default class LayerEditor extends React.Component<IProps> {
                 >
                     <div className="flex-child flex-child--grow py6 my3 wmin0">
                         <StyleLayerName />
+                    </div>
+                    <div className="flex-child flex-child--no-shrink ml12">
+                        <Tablist />
                     </div>
                 </div>
             </div>
