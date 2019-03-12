@@ -16,7 +16,7 @@ const EditorTitle: React.StatelessComponent<IProps> = (props: IProps) => {
             </div>
             <div className="flex-child flex-child--grow">
                 <RenameInput 
-                    labelName='卡电掌门人，德伟长老'
+                    labelName='基础样式'
                 />
             </div>
         </div>
