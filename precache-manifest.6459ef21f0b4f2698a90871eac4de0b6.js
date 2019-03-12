@@ -1,7 +1,7 @@
 self.__precacheManifest = [
   {
-    "revision": "32a04a50455968ca9763",
-    "url": "/mapstyle-studio/static/js/main.15828821.chunk.js"
+    "revision": "fc548c9d09e1c919032d",
+    "url": "/mapstyle-studio/static/js/main.8935672f.chunk.js"
   },
   {
     "revision": "56bb20b44d426eb6b9d0",
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/mapstyle-studio/static/media/T.62997030.svg"
   },
   {
-    "revision": "d6e6dbdf2fe8f27cd46f04871185c4df",
+    "revision": "f354f9f8a09304951c2e798e0f038017",
     "url": "/mapstyle-studio/index.html"
   }
 ];
