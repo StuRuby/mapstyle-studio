@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Editor from './views/Editor';
 
-import TestCount from './TestCount';
+// import TestCount from './TestCount';
 
 interface IProps {
     children: React.ReactNodeArray;
@@ -9,8 +9,8 @@ interface IProps {
 
 const App: React.StatelessComponent<IProps> = (props: IProps) => (
     <div>
-        <TestCount/>
-        {/* <Editor /> */}
+        {/* <TestCount/> */}
+        <Editor />
     </div>
 );
 
