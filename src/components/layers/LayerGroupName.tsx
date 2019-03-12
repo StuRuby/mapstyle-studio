@@ -1,8 +1,6 @@
 import { Icon } from 'antd';
 import * as React from 'react';
-import SVG from '../../utils/svgs';
-
-const { TSvg, PolygonSvg, LineSvg, FolderSvg } = SVG;
+import { ReactComponent as TSvg } from '../../assets/svgs/T.svg';
 
 interface IProps {}
 
@@ -34,7 +32,10 @@ export default class LayerGroupName extends React.PureComponent<IProps> {
                                         </div>
                                     </div>
                                 </div>
-                                <Icon type="like" />
+                                <TSvg
+                                    className="events-none icon flex-child flex-child--no-shrink mr3"
+                                    // style={{ width: '18px', height: '18px' }}
+                                />
                                 <div className="flex-child flex-child--grow txt-truncate">
                                     country-label
                                 </div>
