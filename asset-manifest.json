@@ -1,10 +1,11 @@
 {
-  "main.js": "/mapstyle-studio/static/js/main.6d64f951.chunk.js",
+  "main.js": "/mapstyle-studio/static/js/main.bc8bf2f7.chunk.js",
   "runtime~main.js": "/mapstyle-studio/static/js/runtime~main.43025070.js",
   "static/css/2.63ad5e6a.chunk.css": "/mapstyle-studio/static/css/2.63ad5e6a.chunk.css",
   "static/js/2.646ac8a1.chunk.js": "/mapstyle-studio/static/js/2.646ac8a1.chunk.js",
   "index.html": "/mapstyle-studio/index.html",
-  "precache-manifest.92eb02c9c82083547f01878336823d6b.js": "/mapstyle-studio/precache-manifest.92eb02c9c82083547f01878336823d6b.js",
+  "precache-manifest.bbb8744274a2163d32d6f2eb4852dc81.js": "/mapstyle-studio/precache-manifest.bbb8744274a2163d32d6f2eb4852dc81.js",
   "service-worker.js": "/mapstyle-studio/service-worker.js",
-  "static/css/2.63ad5e6a.chunk.css.map": "/mapstyle-studio/static/css/2.63ad5e6a.chunk.css.map"
+  "static/css/2.63ad5e6a.chunk.css.map": "/mapstyle-studio/static/css/2.63ad5e6a.chunk.css.map",
+  "static/media/T.62997030.svg": "/mapstyle-studio/static/media/T.62997030.svg"
 }
