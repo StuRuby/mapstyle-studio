@@ -1,5 +1,5 @@
 import * as React from 'react';
-import TSvg from '../../assets/svgs/T.svg';
+import { ReactComponent as TSvg } from '../../assets/svgs/T.svg';
 import RenameInput from '../shared/RenameInput';
 
 interface IProps {}
