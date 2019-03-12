@@ -10,7 +10,8 @@
         "no-console": false,
         "one-line": false,
         "no-consecutive-blank-lines": false,
-        "curly": false
+        "curly": false,
+        "object-literal-sort-keys": false
     },
     "rulesDirectory": []
 }
