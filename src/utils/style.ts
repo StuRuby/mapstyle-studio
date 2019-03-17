@@ -5,3 +5,17 @@ export const EmptyState: Style = {
     sources: {},
     layers: [],
 };
+
+type indexOfLayer = number | null;
+export const indexOfLayer: (
+    layers: Layer[],
+    layerId: string,
+) => indexOfLayer = (layers: Layer[], layerId: string) => {
+    for (let i = 0; i < layers.length; i++) {
+        if (layers[i].id === layerId) {
+            return i;
+        }
+    }
+    return null;
+};
+
