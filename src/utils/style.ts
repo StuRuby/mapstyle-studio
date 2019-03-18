@@ -1,3 +1,4 @@
+import { set } from 'lodash';
 import { Layer, Style } from 'mapbox-gl';
 
 export const EmptyState: Style = {
@@ -19,3 +20,48 @@ export const indexOfLayer: (
     return null;
 };
 
+/**
+ * 重命名
+ * @param style
+ * @param name
+ */
+export const reNameStyle: (style: Style, name: string) => Style = (
+    style,
+    name,
+) => {
+    return {
+        ...style,
+        name,
+    };
+};
+
+/**
+ * Layer group
+ */
+
+export const groupLayers: (
+    style: Style,
+    layerIds: string[],
+    groupId: string,
+    name: string,
+) => Style = (style, layerIds, groupId, name) => {
+    let styleSheet = { ...style };
+    set(styleSheet, `metadata["mapbox:groups"][${groupId}]`, 'Group');
+    layerIds.forEach((id) => {
+        const index = indexOfLayer(style.layers || [], id);
+        styleSheet = set(
+            styleSheet,
+            `layers[${index}][metadata][mapbox:group]`,
+            groupId,
+        );
+    });
+    return styleSheet;
+};
+
+// export const renameLayerGroup: (
+//     style: Style,
+//     groupId: string,
+//     name: string,
+// ) => Style = (style, groupId, name) => {
+
+// };

@@ -1,4 +1,4 @@
-import { deref } from '@mapbox/mapbox-gl-style-spec';
+
 import * as React from 'react';
 import EditorTitle from '../../components/shared/EditorTitle';
 
