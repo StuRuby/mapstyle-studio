@@ -1,10 +1,16 @@
 import { Icon, Input, Tooltip } from 'antd';
 import * as React from 'react';
 
+enum InputSize {
+    Large = 'large',
+    Default = 'default',
+    Small = 'small',
+}
+
 interface IProps {
     labelName: string;
     isValidName: () => void;
-    inputIsSmall: boolean;
+    inputIsSmall: InputSize;
     onConfirm: () => void;
     restrictEditToIcon: boolean;
     labelTest: string;
@@ -24,7 +30,7 @@ interface IState {
 export default class RenameInput extends React.Component<IProps, IState> {
     public static defaultProps: Partial<IProps> = {
         confirmTest: '',
-        inputIsSmall: false,
+        inputIsSmall: InputSize.Small,
         labelTest: '',
         restrictEditToIcon: false,
     };
@@ -38,6 +44,16 @@ export default class RenameInput extends React.Component<IProps, IState> {
         };
     }
 
+    public toggleRenameMode = (e: React.FormEvent) => {
+        e.stopPropagation();
+        const { renameMode } = this.state;
+        const { labelName } = this.props;
+        this.setState({
+            renameMode: !renameMode,
+            newName: labelName,
+            errorMessage: '',
+        });
+    }
     public render() {
         const { inputIsSmall } = this.props;
         const showEditIcon = this.props.showEditIcon
@@ -58,12 +74,23 @@ export default class RenameInput extends React.Component<IProps, IState> {
         return (
             <div className={`w-full ${cursorPointer}`}>
                 {this.state.renameMode ? (
-                    <Input />
+                    <Input
+                        size={inputIsSmall}
+                        defaultValue={this.props.labelName}
+                        addonAfter={
+                            <Icon
+                                type="check"
+                                onClick={this.toggleRenameMode}
+                            />
+                        }
+                        onPressEnter={this.toggleRenameMode}
+                    />
                 ) : (
                     <div
                         className={`${
                             this.props.inputIsSmall ? 'txt-fancy' : ''
                         } flex-parent flex-parent--space-between-main`}
+                        onClick={this.toggleRenameMode}
                     >
                         <div className="lex-parent flex-parent--center-cross flex-child flex-child--grow">
                             <div className="txt-truncate">

@@ -2,15 +2,6 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { Dispatch, IRootState } from './store';
 
-interface IState {
-    value: number;
-}
-
-interface IDispatchProps {
-    increment: () => void;
-    incrementAsync: () => Promise<void>;
-}
-
 type Props = ReturnType<typeof mapState> & ReturnType<typeof mapDispatch>;
 
 const style = { color: 'blue' };

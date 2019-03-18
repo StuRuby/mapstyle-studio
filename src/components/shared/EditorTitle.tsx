@@ -4,20 +4,18 @@ import RenameInput from './RenameInput';
 
 interface IProps {
     route: string;
-    // name: string;
-    // onConfirm: () => void;
+    name: string | undefined;
+    onConfirm: (name: string) => void;
 }
 
-const EditorTitle: React.StatelessComponent<IProps> = (props: IProps) => {
+const EditorTitle: React.FunctionComponent<IProps> = (props: IProps) => {
     return (
         <div className=" flex-parent">
             <div className="flex-child flex-child--no-shrink">
                 <EditorBackButton route={props.route} />
             </div>
             <div className="flex-child flex-child--grow">
-                <RenameInput 
-                    labelName='基础样式'
-                />
+                <RenameInput labelName={props.name}  />
             </div>
         </div>
     );
