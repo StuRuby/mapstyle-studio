@@ -7,7 +7,7 @@ export const EmptyState: Style = {
     layers: [],
 };
 
-type indexOfLayer = number | null;
+type indexOfLayer = number;
 export const indexOfLayer: (
     layers: Layer[],
     layerId: string,
@@ -17,7 +17,7 @@ export const indexOfLayer: (
             return i;
         }
     }
-    return null;
+    return -1;
 };
 
 /**
@@ -48,7 +48,7 @@ export const groupLayers: (
     let styleSheet = { ...style };
     layerIds.forEach((id) => {
         const index = indexOfLayer(style.layers || [], id);
-        if (index == null) return;
+        if (index === -1) return;
         styleSheet = set(
             styleSheet,
             `layers[${index}][metadata][mapbox_group]`,
@@ -76,3 +76,23 @@ export const renameLayerGroup: (
     set(styleSheet, 'layers', layers);
     return styleSheet;
 };
+
+export const unGroupLayer: (style: Style, layerIds: string[]) => Style = (
+    style,
+    layerIds,
+) => {
+    const styleSheet = { ...style };
+    const layers = style.layers || [];
+    layerIds.forEach((id) => {
+        layers.forEach((layer) => {
+            const index = indexOfLayer(layers, id);
+            if (layers[index] && layers[index].metadata) {
+                delete layers[index].metadata.mapbox_group;
+            }
+        });
+    });
+    set(styleSheet, 'layers', layers);
+    return styleSheet;
+};
+
+

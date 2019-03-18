@@ -1,4 +1,4 @@
-import { groupLayers, renameLayerGroup } from '../../utils/style';
+import { groupLayers, renameLayerGroup,unGroupLayer } from '../../utils/style';
 import exampleStyle from '../mock/example.style';
 
 let groupedStyle = {};
@@ -37,5 +37,10 @@ describe('style utils', () => {
                 .filter(layer => layer.metadata && layer.metadata.mapbox_group)
                 .every(layer => layer.metadata.mapbox_group === 'test_group')
         );
+    });
+
+    it('ungroup layers with group id test_group',()=>{
+        unGroupLayer(groupedStyle,['landuse_park', 'building', 'tunnel_minor']);
+        console.log(JSON.stringify(groupedStyle));
     });
 });
