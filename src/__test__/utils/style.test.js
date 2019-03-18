@@ -1,10 +1,10 @@
-import { groupLayers } from '../../utils/style';
+import { groupLayers, renameLayerGroup } from '../../utils/style';
 import exampleStyle from '../mock/example.style';
 
-
+let groupedStyle = {};
 describe('style utils', () => {
     it('group Layers function', () => {
-        let groupedStyle = groupLayers(
+        groupedStyle = groupLayers(
             exampleStyle,
             ['landuse_park', 'building', 'tunnel_minor'],
             'test_group_id',
@@ -22,6 +22,20 @@ describe('style utils', () => {
             result.every(
                 item => item.metadata['[mapbox:group'] === 'test_group_id'
             )
+        );
+    });
+
+    it('rename group layer to test_group', () => {
+        groupedStyle = renameLayerGroup(
+            groupedStyle,
+            'test_group_id',
+            'test_group'
+        );
+
+        expect(
+            groupedStyle.layers
+                .filter(layer => layer.metadata && layer.metadata.mapbox_group)
+                .every(layer => layer.metadata.mapbox_group === 'test_group')
         );
     });
 });

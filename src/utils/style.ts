@@ -1,4 +1,4 @@
-import { set } from 'lodash';
+import { get, set } from 'lodash';
 import { Layer, Style } from 'mapbox-gl';
 
 export const EmptyState: Style = {
@@ -46,22 +46,33 @@ export const groupLayers: (
     name: string,
 ) => Style = (style, layerIds, groupId, name) => {
     let styleSheet = { ...style };
-    set(styleSheet, `metadata["mapbox:groups"][${groupId}]`, 'Group');
     layerIds.forEach((id) => {
         const index = indexOfLayer(style.layers || [], id);
+        if (index == null) return;
         styleSheet = set(
             styleSheet,
-            `layers[${index}][metadata][mapbox:group]`,
+            `layers[${index}][metadata][mapbox_group]`,
             groupId,
         );
     });
     return styleSheet;
 };
 
-// export const renameLayerGroup: (
-//     style: Style,
-//     groupId: string,
-//     name: string,
-// ) => Style = (style, groupId, name) => {
+export const renameLayerGroup: (
+    style: Style,
+    groupId: string,
+    name: string,
+) => Style = (style, groupId, name) => {
+    const styleSheet = { ...style };
+    const layers = styleSheet.layers || [];
 
-// };
+    layers.map((layer: Layer, index: number) => {
+        if (layer.metadata && layer.metadata.mapbox_group === groupId) {
+            layer.metadata.mapbox_group = name;
+            return layer;
+        }
+        return layer;
+    });
+    set(styleSheet, 'layers', layers);
+    return styleSheet;
+};
