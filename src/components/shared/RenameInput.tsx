@@ -11,8 +11,8 @@ interface IProps {
     labelName: string;
     isValidName: () => void;
     inputIsSmall: InputSize;
-    onConfirm: () => void;
-    restrictEditToIcon: boolean;
+    onConfirm: (name: string) => void;
+    // restrictEditToIcon: boolean;
     labelTest: string;
     confirmTest: string;
     triggerTest?: string;
@@ -22,9 +22,7 @@ interface IProps {
 
 interface IState {
     renameMode: boolean;
-    errorMessage: string;
     newName: string;
-    hovered: boolean;
 }
 
 export default class RenameInput extends React.Component<IProps, IState> {
@@ -32,13 +30,11 @@ export default class RenameInput extends React.Component<IProps, IState> {
         confirmTest: '',
         inputIsSmall: InputSize.Small,
         labelTest: '',
-        restrictEditToIcon: false,
+        // restrictEditToIcon: false,
     };
     constructor(props: IProps) {
         super(props);
         this.state = {
-            errorMessage: '',
-            hovered: false,
             newName: '',
             renameMode: false,
         };
@@ -51,31 +47,17 @@ export default class RenameInput extends React.Component<IProps, IState> {
         this.setState({
             renameMode: !renameMode,
             newName: labelName,
-            errorMessage: '',
         });
     }
     public render() {
         const { inputIsSmall } = this.props;
-        const showEditIcon = this.props.showEditIcon
-            ? this.props.showEditIcon
-            : this.state.hovered;
 
-        const formConfig = {
-            newName: {
-                autoFocus: true,
-                initialValue: this.state.newName,
-                // onBlur:this.onConfirm,
-            },
-        };
-        const cursorPointer =
-            !this.state.renameMode && this.props.restrictEditToIcon
-                ? 'cursor-pointer'
-                : '';
+        const cursorPointer = !this.state.renameMode ? 'cursor-pointer' : '';
         return (
             <div className={`w-full ${cursorPointer}`}>
                 {this.state.renameMode ? (
                     <Input
-                        size={inputIsSmall}
+                        size={InputSize.Small}
                         defaultValue={this.props.labelName}
                         addonAfter={
                             <Icon
@@ -102,7 +84,6 @@ export default class RenameInput extends React.Component<IProps, IState> {
                                 )}
                             </div>
                         </div>
-                        {showEditIcon && <Icon type="left" />}
                     </div>
                 )}
             </div>
